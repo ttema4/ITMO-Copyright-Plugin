@@ -1,0 +1,45 @@
+<!-- Plugin Configuration File -->
+<!-- Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+
+<idea-plugin>
+    <!-- Unique identifier for the plugin. It should be FQN and remain unchanged between versions. -->
+    <id>com.itmo.demo</id>
+
+    <!-- Public plugin name in Title Case. -->
+    <name>ITMO Insert Text</name>
+
+    <!-- Vendor information displayed on the Plugin Page -->
+    <vendor email="support@itmo.com" url="https://www.itmo.com">ITMO University</vendor>
+
+    <!-- Description of the plugin, visible on the Plugin Page and in the IDE Plugin Manager -->
+    <description><![CDATA[
+        This plugin allows you to easily insert predefined text into your code editor.
+        <br><em>Great for quickly adding copyright statements or other boilerplate code!</em>
+        <br><br>
+        Features:
+        <ul>
+            <li>Insert a copyright message.</li>
+            <li>Quickly add boilerplate text to your project.</li>
+        </ul>
+    ]]></description>
+
+    <!-- Define plugin dependencies and compatibility. -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Define extension points provided by the plugin -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Additional extensions can be added here -->
+    </extensions>
+
+    <!-- Define actions that the plugin provides -->
+    <actions>
+        <action
+                id="InsertCopyrightTextAction"
+                class="InsertTextAction"
+                text="Insert ©Copyright">
+            <!-- Add the action to the Editor's popup menu, anchor it at the last position -->
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
